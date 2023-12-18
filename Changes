@@ -1,0 +1,82 @@
+Revision history for Perl extension Ithumb::XS.
+
+v0.5.5 2021-11-20
+    - Removed executable flag on Makefile.PL, README*, etc
+    - Fixed export function (create_image -> create_thumbnail)
+
+v0.5.4 2021-11-19
+    - Fixed CFLAGS override into Makefile.PL (thanks viy2 for bug report)
+    - Added optimization option: -march=native
+    - Removed flag: -Werror
+
+v0.5.3 2020-07-04
+    - Project is closed!
+    - Fixed README*
+
+v0.5.2 2020-03-01
+    - Fixed README*
+    - Fixed Cpants Kwalitee issues
+    - Fixed XS.xs
+      PROTOTYPES: DISABLE
+    - Fixed Makefile.PL
+      OPTIMIZE -O3
+    - Fixed XS getting input values from hashref
+      replace SvPV -> SvPV_nolen (suck less memory)
+
+v0.5.1 2020-02-05
+    - Fixed unused variables in ithumb.c
+    - Fixed undeclared dependency Test::Pod::Coverage
+      https://github.com/ChaoticEvil/p5-ithumb-xs/issues/2#issue-559945803
+    - Added more strictly compiler flag (-Wall -Wextra -Werror -std=c11)
+
+v0.5.0 2020-02-04
+    - Added .travis.yml for CI over github
+    - Added badges icons: build, coverage and cpan package version
+    - Added cpanfile (for test pod coverage on 'make test')
+    - Removed redundant OO-interface
+    - Reverted method name convert_image -> create_thumbnail
+    - Actualized README* and pod docs
+    - Used wrap save-fucntion into more safely *with_error_return-fucntion
+    - C and XS code changes:
+      small refactoring;
+      add func-wrapper for more safely saving result image;
+
+v0.4.0 2019-12-04
+    - Thumbnail algorithm moved to the library and separated from XS
+
+v0.3.0 2019-11-29
+    - Added new tests
+    - Improved conversion algorithm
+    - Renamed method (create_thumbnail -> convert_image)
+
+v0.2.1 2019-02-17
+    - Fixed pod-docs
+
+v0.2.0 2019-02-17
+    - Rewrote XS-code (params of thumbnail as hashref and better validation)
+    - Added OO-interface: convert
+    - Fixed tests
+    - Fixed pod-doc ad readme
+
+v0.1.5 2018-12-08
+    - Fixed and improve readme's and pod-docs
+
+v0.1.4.1 2018-11-22
+    - Fixed render validation error
+    - Fixed module description
+
+v0.1.4 2018-11-22
+    - Some XS improves (better input validation)
+
+v0.1.3 2018-07-03
+    - Improve XS code
+
+v0.1.2 2018-03-14
+    - Fixed CPAN Kwalitee Issues
+
+v0.1.1 2018-03-11
+    - Fixed test, pod-docs and typo.
+
+v0.1.0 2018-03-11
+    - The first release.
+      Added basic functionality, create distribution and make cpan-package.

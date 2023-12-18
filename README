@@ -1,0 +1,69 @@
+Ithumb-XS
+=========
+
+! ATTENTION !
+
+The project was started for educational purposes (for learning Perl C API).
+At this moment I haven't reasons for continued development.
+There are more suitable solutions for creation of image thumbnails.
+I close a project. Thanks all.
+
+---
+
+Ithumb::XS - is a small (one function), simple and fast Perl-XS module
+for creation a thumbnails (with resizing and cropping), using Imlib2 library.
+
+DEPENDENCES & REQUIRES
+
+This module requires these other modules and libraries:
+
+  Imlib2 (binary and headers)
+
+Required Perl >= v5.24.0
+
+INSTALLATION
+
+MacOS prepare installation.
+
+  brew cask install xquartz
+  brew install imlib2
+
+Manual installation.
+
+To manual install this module type the following:
+
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+To automatical install this module type the following:
+
+  cpan -i Ithumb::XS
+
+USAGE
+
+From shell (as one-liner):
+
+  perl -MIthumb::XS=create_thumbnail -e \
+    "create_thumbnail({width => 800, height => 600, src => '1.jpg', dst => '2.jpg'})"
+
+From perl code:
+
+  use Ithumb::XS 'create_thumbnail';
+
+  create_thumbnail({
+      width  => 800,
+      height => 600,
+      src    => 'src_image.jpg',
+      dst    => 'dst_image.jpg',
+  });
+
+COPYRIGHT AND LICENCE
+
+BSD 3-Clause License
+
+Copyright (c) 2018-2021 Peter P. Neuromantic <p.brovchenko@protonmail.com>.
+All rights reserved.
+
+See LICENSE file for more information.
